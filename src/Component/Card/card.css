@@ -1,0 +1,147 @@
+.card{
+    position: inherit;
+    max-width: 320px;
+    max-height: 380px;
+    padding: 0 0 1rem 0;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    margin:auto;
+    font-weight: 400;
+    text-decoration: none !important;
+    z-index: 0;
+ }
+ .card:hover{
+     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+ }
+
+ .card-img{
+     height: 100%;
+     width: 100%;
+     border-radius: 10px 10px 0 0;
+ }
+ .card-button{
+    position:absolute;
+    display: flex;
+    top:25%;
+    padding: 0.4rem;
+    margin: 0 .4rem;
+    border-radius: 1rem;
+    background: transparent;
+ }
+ .card-button:hover{
+    background: rgb(255, 255, 255);
+ }
+
+ .left{
+    left: 0;
+ }
+ .right{
+    right: 0;
+ }
+ .card-content{
+     padding: 0 1rem ;
+ }
+ 
+ .card-nav{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 1rem 0;
+     border-bottom: 1px solid rgba(128, 128, 128, 0.122);
+ }
+ .card-villa-name{
+    font-weight: 400;
+    font-size: 17px;
+    color: black;
+ }
+ .card-local {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     font-size: 14px;
+     color: grey;
+     opacity: 70%;
+     margin: 3px 0;
+ }
+ .card-local>div{
+     margin: 0 3px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+ }
+ 
+ .card-raiting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 .2rem;
+    gap: 2px;
+    border-radius: 10px;
+ }
+ .card-raiting-star{
+    color: rgb(255, 230, 0);
+    font-size: 1.3rem;
+
+ }
+ .card-raiting-data{
+    font-size: small;
+    font-weight: 300;
+ }
+ .card-desc{
+     display: grid; 
+     grid-template-columns: 1fr 1fr; 
+     grid-template-rows: 1fr 1fr; 
+     gap: 15px;
+     justify-content: center;
+     align-items: center;
+     color: black;
+     opacity: 60%;
+     margin: auto;
+ }
+ 
+ .card-desc-detail{
+     display: flex;
+     align-items: center;
+     text-align: center;
+     gap: 5px;
+     font-size: small;
+     font-weight: 400;
+ }
+ .card-icon{
+     display: flex;
+     align-items: center;
+ }
+ .card-cost{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     float: right;
+     color: rgb(132, 148, 180);
+     border-bottom: 1px solid rgba(132, 148, 180, 0.823);
+ }
+ .dot-container{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+ }
+ .dot {
+    margin: 0 2px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: rgb(155, 155, 155);
+    display: inline-block;
+}
+.active{
+    background: rgb(255, 255, 255);
+}
+ 
+ 
+ 
+ 

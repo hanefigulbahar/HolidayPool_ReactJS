@@ -1,0 +1,168 @@
+[
+    {
+        "id": "1",
+        "name": "Villa Abosa",
+        "location": "Antalya/Kaş",
+        "status": "true",
+        "description":[
+            {
+                "bed":1,
+                "badrooms":1,
+                "peoples":3
+            }
+        ],
+        "costs":"1200~3000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status": true
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status": false
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ]
+        
+    },
+    {
+        "id": "2",
+        "name": "Villa Perla",
+        "location": "Antalya/Kaş",
+        "status": "true",
+        "description":[
+            {
+                "bed":2,
+                "badrooms":1,
+                "peoples":2
+            }
+        ],
+        "costs":"5500~10000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status":true
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status": false
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ]
+        
+    },
+    {
+        "id": "3",
+        "name": "Villa Bıdırık",
+        "location": "Antalya/Kaş",
+        "status": "true",
+        "description":[
+            {
+                "bed":4,
+                "badrooms":3,
+                "peoples":3
+            }
+        ],
+        "costs":"3000~8000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status": false
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status": true
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ]
+        
+    }
+    ,
+    {
+        "id": "4",
+        "name": "Villa BCıdırık",
+        "location": "Antalya/Kaş",
+        "status": "true",
+        "description":[
+            {
+                "bed":4,
+                "badrooms":3,
+                "peoples":3
+            }
+        ],
+        "costs":"3000~8000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status": true
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status":false
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ]
+        
+    },
+    {
+        "id": "5",
+        "name": "Villa BCıdırık",
+        "location": "Antalya/Kaş",
+        "status": "true",
+        "description":[
+            {
+                "bed":4,
+                "badrooms":3,
+                "peoples":3
+            }
+        ],
+        "costs":"3000~8000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status": true
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status": true
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ]
+        
+    }
+]

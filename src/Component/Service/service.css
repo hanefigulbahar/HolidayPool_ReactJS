@@ -1,0 +1,53 @@
+.service{
+    display: grid;
+    gap: 30px;
+    padding: 5rem;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    color: rgb(84, 83, 83);
+    font-size: 20px;
+    font-weight: 400;
+}
+.service-detail>div{
+    font-weight:400;
+
+}
+.service-detail > p{
+    font-weight: 400;
+    opacity: 40%;
+}
+
+.service-content{
+    display: flex;
+    margin: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+}
+.service-content .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.9rem;
+    margin: 1rem 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgba(101, 101, 101, 0.8) 0%, rgb(195, 182, 185) 100%);
+}
+
+@media (max-width:570px) {
+    .service{
+        gap:50px;
+        color: rgb(195, 182, 185);
+    }
+    .service-detail{
+        padding: 1rem 0;
+    }
+    .service-content{
+        display: block;
+        margin: auto;
+    }
+}

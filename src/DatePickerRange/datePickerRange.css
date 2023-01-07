@@ -1,0 +1,21 @@
+.calendarwrap >input{
+    padding:1rem;
+    font-size: 1rem;
+    width: 330px;
+    height: 43.5px;
+    border-radius: 10px;
+}
+.calendarwrap{
+    display: inline-block;
+    position:relative;
+}
+.calendarelement{
+    position: absolute;
+    left: 50%;
+    top: 3rem;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px 1px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
+    z-index: 1;
+
+}

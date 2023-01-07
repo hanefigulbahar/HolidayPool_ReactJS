@@ -1,0 +1,282 @@
+.villa{
+    position:relative;
+    color: white;
+    height: 100vh;
+    z-index: 1;
+}
+.villa-image{
+    height: 100%;
+    width: 100%;
+    opacity: 80%;
+}
+.villa-content{
+    padding: 3rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+.villa-title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    gap: 20px;
+    font-size: xx-large;
+    margin: 2rem 0;
+    font-weight: 300;
+}
+.villa-description{
+    font-size: medium;
+    opacity: 80%;
+}
+.villa-detail{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    margin: 2rem 0;
+    font-weight: 300;
+
+}
+.villa-desc-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.villa-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+}
+.villa-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding:1rem 2rem;
+    width: 100%;
+}
+.villa-container-content{
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+    position: relative;
+    width: 70%;
+}
+.villa-container-header{
+    display: flex;
+    margin-left:3rem;
+    margin-top:1rem;
+    gap: 20px;
+}
+
+.villa-reservation{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    text-align: center;
+    border-radius: 0.5rem;
+    background:rgba(154, 167, 188, 0.8);
+    color:white;
+    width: 30%;
+    padding: 1.6rem 0;
+    font-weight: 300;
+
+}
+.villa-reservation-title{
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight:400;
+}
+.villa-reservarion-date{
+    position: relative;
+    
+}
+.villa-reservarion-date > input{
+    width: 300px;
+}
+.villa-reservation-date .icons{
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: grey;
+    opacity: 60%;
+}
+.villa-reservation-input-group{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    gap: 30px;
+    color: #000;
+}
+.villa-reservation-input-group input{
+    text-align: center;
+    width: 330px;
+}
+.villa-reservarion-plus{
+    background:transparent;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: grey;
+    opacity: 60%;
+
+}
+.villa-reservarion-negative{
+    background:transparent;
+    position: absolute;
+    margin-left: -20rem;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: grey;
+    opacity: 60%;
+}
+.villa-reservation-payment{
+    border-top: 1px solid #8494b4;
+    padding: 1rem;
+    font-weight: 400;
+}
+.villa-reservation-payment-first{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #8494b4;
+}
+.villa-reservation-payment-cost{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #8494b4;
+}
+.villa-reservation-payment-total{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #8494b4;
+}
+.villa-reservation-payment-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.villa-reservation-payment-submit>button{
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    width: 100%;
+    background:rgb(116, 144, 189);
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+
+.villa-container-content-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.villa-container-content-foward{
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    padding:0 10px;
+    border-radius: 1rem;
+    background:transparent;
+
+}
+
+.villa-container-content-backward{
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    padding:0 10px;
+    border-radius: 1rem;
+    background:transparent;
+
+}
+.villa-container-content-backward:hover,.villa-container-content-foward:hover{
+    background: rgba(128, 128, 128, 0.606);
+}
+
+.villa-slider-icon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.villa-container-content-detail{
+    margin: 0 2rem 1rem ;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+}
+.villa-container-content-feature{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    margin: auto;
+    padding: 1rem ;
+
+}
+.villa-container-content-feature-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.villa-container-content-feature-icon{
+    color:rgb(126, 197, 46);
+    font-size: 1.5rem;
+}
+
+.villa-container-content-feature-detail > p{
+    color: rgba(128, 128, 128, 0.8);
+}
+
+.villa-container-content-description{
+    background: #fff;
+    margin: 2rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+
+}
+.villa-container-content-description-detail{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: rgba(128, 128, 128, 1);
+    gap: 20px;    
+    font-weight: 400;
+}
+
+.villa-container-content-description-detail>div>p{
+    padding: 1rem 0;
+
+}
+.negative{
+    text-decoration: line-through !important;
+    color: gray;
+}
+.icon-negative{
+    color: rgb(243, 72, 72);
+}

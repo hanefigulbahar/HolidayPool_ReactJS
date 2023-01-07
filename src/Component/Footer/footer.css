@@ -1,0 +1,51 @@
+.footer-container{
+    background: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    font-weight: 300;
+    box-shadow: 2px 4px 10px 0px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+}
+.footer-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.footer-logo img{
+    width:3rem;
+}
+
+
+.footer-col{
+    display: grid;
+    gap: 30px;
+}
+
+.footer-social{
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #6c72e3, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    border-radius: 0.3rem;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+
+.instagram{
+    font-size: xx-large;
+    color: white;
+}

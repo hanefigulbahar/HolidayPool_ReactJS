@@ -1,0 +1,27 @@
+.selectWrap{
+    display: inline-block;
+    position:relative;
+    border-radius: 10px;
+}
+.selectElement{
+    position: absolute;
+    left: 50%;
+    top: 3.8rem;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px 1px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
+    z-index: 1;
+    width: 200px;
+    background: white;
+}
+
+.optionElement{
+    border-bottom:1px solid #9aa7bc;
+    padding: 1rem 0;
+    height: 43.5px;
+    font-weight: 300;
+}
+
+.optionElement:last-child{
+    border: none;
+}
