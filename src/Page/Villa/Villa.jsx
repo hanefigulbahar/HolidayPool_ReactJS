@@ -9,28 +9,54 @@ import DatePickerRange from '../../DatePickerRange/DatePickerRange'
 import SelectBox from '../../Component/SelectBox/SelectBox'
 import { useParams, useNavigate } from 'react-router-dom'
 import products from '../../product.json'
+import format from 'date-fns/format';
+
 
 
 const Villa = () => {
     const { villaID } = useParams()
     const [index, setIndex] = useState(1)
     const [count, setCount] = useState(0)
-    const [rangeDate, setRangeDate] = useState()
+    const [rangeDate, setRangeDate] = useState({
+        start: new Date(),
+        end: new Date()
+    })
 
     const navigate = useNavigate()
-
-
+    console.log(rangeDate)
 
     const rezHandle = () => {
 
         navigate(`/reservation`, {
             state: {
                 villaID: villaID,
-                person: count,
-                rangeDate: rangeDate,
+                guest: count,
+                start: rangeDate.start,
+                end: rangeDate.end,
             }
         })
     }
+
+    /*products.map(product => {
+        if (product.id === villaID) {
+            const villaName = product.name
+            const villaLocation = product.location
+            product.description.map(desc => {
+                const villaBed = desc.bed
+                const villaBathroom = desc.bathroom
+                const villaGuest = desc.peoples
+            }
+            )
+            const villaFeature = product.features.map(feature => feature)
+            const firstPayment = product.payments.firstPay
+            const startDayPayment = product.payments.dailyPayment.map(payment => (payment.day === format(rangeDate.start, "dd/MM/yyyy")))
+            const endDayPayment = product.payments.dailyPayment.map(payment => {
+                if (payment.day === format(rangeDate.end, "dd/MM/yyyy")) {
+                    console.log(payment.amount)
+                }
+            })
+        }
+    })*/
     return (
         <>
             {products.map(product => {
@@ -109,11 +135,10 @@ const Villa = () => {
                                     <div className='villa-reservation-payment'>
                                         <div className='villa-reservation-payment-first'>
                                             <div>Ön Ödeme</div>
-                                            <div>200</div>
+                                            <div>{product.payments.firstPay}</div>
                                         </div>
                                         <div className='villa-reservation-payment-cost'>
                                             <div>Villa Ücreti</div>
-                                            <div>200</div>
                                         </div>
                                         <div className='villa-reservation-payment-total'>
                                             <div>Toplam ({"10 gün"})</div>

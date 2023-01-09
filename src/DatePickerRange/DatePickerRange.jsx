@@ -34,7 +34,10 @@ const DatePickerRange = ({ setRangeDate }) => {
     const inputRef = useRef(null)
 
     useEffect(() => {
-        setRangeDate(dateRange)
+        setRangeDate({
+            start: dateRange[0].startDate,
+            end: dateRange[0].endDate
+        })
     }, [dateRange, setRangeDate])
 
 

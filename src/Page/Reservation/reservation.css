@@ -24,23 +24,90 @@
     font-size: 1.5rem;
 }
 .rez-container{
-    background: rgb(255, 255, 255);
-    height: 100vh;
+    background: rgba(214, 214, 214, 0.2);
     display: flex;
     justify-content: space-between;
     gap: 5rem;
-    padding: 2rem;
+    padding: 2rem 6rem;
 }
 .rez-detail{
-    width: 70%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background: white;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     border-radius: 0.5rem;
+    padding: 2rem 4rem;
+    gap: 20px;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.rez-detail-title{
+    font-size: 2rem;
+    font-weight: 350;
+    color: rgba(0, 0, 0, 0.7);
+}
+.rez-detail-date{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.rez-detail-date-check{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #8494b4;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 200px;
+}
+.rez-detail-date-check div:nth-child(1){
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(132, 148, 180, 0.5);
+}
+.rez-confirm-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.rez-confirm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.rez-confirm label{
+    width: max-content;
+    border-bottom: 1px solid #8494b4;
+}
+.rez-confirm input{
+    background: rgb(236, 236, 236);
+    width:100%;
+    color: rgba(0, 0, 0, 0.603);
+}
+.rez-confirm input:focus{
+   background:white;
+   border: 2px solid rgba(132, 148, 180, 0.8);
+}
+.rez-confirm button{
+    background: #8494b4a7;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width:100%;
+    height: 43.5px;
+    font-size: 1.1rem;
+}
+.rez-confirm button:hover{
+    background: #8494b4;
 }
 .rez-info{
-    width: 30%;
-    height: 60vh;
+    width: 40%;
+    height: 70vh;
     position: sticky;
     top: 1rem;
+    background: white;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     border-radius: 0.5rem;
 }
@@ -53,14 +120,14 @@
     border-bottom:1px solid rgba(128, 128, 128, 0.367);
 }
 .rez-info-img{
-    background: red;
+    background: rgba(132, 148, 180, 0.5);
     width: 40%;
     border-radius: .5rem;
 }
 .rez-villa-info{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 0.8rem;
     padding: .4rem 0;
 }
@@ -72,10 +139,32 @@
     display: flex;
     gap: 2px;
     font-weight: 400;
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
 }
-.rez-villa-info-rating-icon{
+.rez-info-payment{
+    display: flex;
+    flex-direction: column;
 
+    gap: 30px;
+    padding: 0 2rem;
+    font-weight: 300;
+    font-size: 1.1rem;
 }
-
-
+.rez-info-payment-title{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+}
+.rez-info-payment-detail{
+    display: flex;
+    justify-content: space-between;
+}
+.discound div:nth-child(2){
+    color :green;
+}
+.rez-info-payment-detail:last-child{
+    color: rgb(0, 0, 0 ,0.7);
+    border-top:1px solid #8494b4;
+    padding-top:10px ;
+    font-weight: 400;
+}

@@ -3,7 +3,6 @@
         "id": "1",
         "name": "Villa Abosa",
         "location": "Antalya/Kaş",
-        "status": "true",
         "description":[
             {
                 "bed":1,
@@ -29,8 +28,27 @@
                 "name":"pool",
                 "status": true
             }
-        ]
-        
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"09/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"10/01/2023",
+                    "amount":3000
+                }
+            ]
+        }
     },
     {
         "id": "2",
