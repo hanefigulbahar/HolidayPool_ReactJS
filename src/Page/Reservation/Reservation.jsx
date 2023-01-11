@@ -24,15 +24,15 @@ const Reservation = () => {
                     <div className='rez-detail-date'>
                         <div className='rez-detail-date-check in'>
                             <div>Check-in</div>
-                            <div>11/01/2023</div>
+                            <div>{format(datas.start, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check out'>
                             <div>Check-out</div>
-                            <div>11/01/2023</div>
+                            <div>{format(datas.end, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check'>
                             <div>Guest</div>
-                            <div>1</div>
+                            <div>{datas.guest}</div>
                         </div>
                     </div>
                     <div className='rez-confirm-detail'>
@@ -72,7 +72,7 @@ const Reservation = () => {
                         <div className='rez-info-payment-title'>Price Detail</div>
                         <div className='rez-info-payment-detail'>
                             <div>First amound</div>
-                            <div>100 ₺</div>
+                            <div>100₺</div>
                         </div>
                         <div className='rez-info-payment-detail'>
                             <div>Villa amount</div>

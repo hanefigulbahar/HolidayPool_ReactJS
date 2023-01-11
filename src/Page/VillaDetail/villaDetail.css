@@ -168,16 +168,20 @@
     align-items: center;
     text-align: center;
 }
-.villa-reservation-payment-submit>button{
+.villa-reservation-payment-submit button{
     padding: 1rem;
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     border-radius: 10px;
-    width: 100%;
-    background:rgb(116, 144, 189);
+    width: 95%;
+    background:rgba(116, 144, 189, 0.335);
     font-size: 1rem;
     font-weight: 500;
     color: white;
+}
+.villa-reservation-payment-submit button:hover{
+    outline:1px solid #5876b2;
+    background:rgb(116, 144, 189);
 }
 
 
@@ -263,7 +267,7 @@
 .villa-container-content-description-detail{
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 2rem 4rem 2rem;
     color: rgba(128, 128, 128, 1);
     gap: 20px;    
     font-weight: 400;

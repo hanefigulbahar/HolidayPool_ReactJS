@@ -1,27 +1,31 @@
 import React from 'react'
 import logo from "../../../src/logos.png"
 import '../Footer/footer.css'
-import { BsInstagram } from 'react-icons/bs'
+import { SlSocialInstagram, SlSocialFacebook, SlSocialTwitter } from 'react-icons/sl'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const date = new Date()
     return (
         <div className='footer-container'>
-            <div className='footer-logo'>
-                <img src={logo} alt="" />
-                <div className='footer-name'>© {date.getFullYear()} HolidayPool</div>
-            </div>
             <div className='footer-col'>
-                <div>kurumsal</div>
+                <div className='footer-name'>© {date.getFullYear()} HolidayPool</div>
+                <div>/</div>
+                <div>Kurumsal</div>
+                <div>/</div>
                 <div>Rezervasyon Rehberi</div>
-                <div>kiralama koşulları</div>
+                <div>/</div>
+                <div>Kiralama koşulları</div>
+                <div>/</div>
                 <div>Politika</div>
             </div>
+            <div>TR</div>
             <div className='footer-social'>
-                <div>Social media</div>
-                <div className='icon'><BsInstagram className="instagram" /></div>
+                <Link><SlSocialInstagram className='footer-icons' /></Link>
+                <Link><SlSocialFacebook className='footer-icons' /></Link>
+                <Link><SlSocialTwitter className='footer-icons' /></Link>
             </div>
-        </div>
+        </div >
     )
 }
 

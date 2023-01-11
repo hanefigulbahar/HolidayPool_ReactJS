@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     gap: 5rem;
-    padding: 2rem 6rem;
+    padding:5rem 6rem;
 }
 .rez-detail{
     display: flex;
@@ -81,6 +81,8 @@
 .rez-confirm label{
     width: max-content;
     border-bottom: 1px solid #8494b4;
+    margin: 0 0.3rem;
+    padding: 0 0.6rem;
 }
 .rez-confirm input{
     background: rgb(236, 236, 236);
@@ -165,6 +167,6 @@
 .rez-info-payment-detail:last-child{
     color: rgb(0, 0, 0 ,0.7);
     border-top:1px solid #8494b4;
-    padding-top:10px ;
+    padding:10px 0 ;
     font-weight: 400;
-}
+}   

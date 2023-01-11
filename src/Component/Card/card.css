@@ -90,6 +90,7 @@
  .card-raiting-data{
     font-size: small;
     font-weight: 300;
+    color: black;
  }
  .card-desc{
      display: grid; 

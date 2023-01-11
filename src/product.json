@@ -1,8 +1,8 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "name": "Villa Abosa",
-        "location": "Antalya/Kaş",
+        "location": "Kaş",
         "description":[
             {
                 "bed":1,
@@ -48,12 +48,18 @@
                     "amount":3000
                 }
             ]
-        }
+        },
+        "days":[
+            "23/01/2023",
+            "24/01/2023",
+            "25/01/2023"
+        ]
+          
     },
     {
-        "id": "2",
+        "id": 2,
         "name": "Villa Perla",
-        "location": "Antalya/Kaş",
+        "location": "Tırmısın",
         "status": "true",
         "description":[
             {
@@ -80,13 +86,40 @@
                 "name":"pool",
                 "status": true
             }
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"09/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"11/01/2023",
+                    "amount":3000
+                }
+            ]
+        },
+        "days":[
+            "24/01/2023",
+            "25/01/2023",
+            "26/01/2023",
+            "27/01/2023",
+            "28/01/2023"
+
         ]
-        
     },
     {
-        "id": "3",
+        "id": 3,
         "name": "Villa Bıdırık",
-        "location": "Antalya/Kaş",
+        "location": "Tırmısın",
         "status": "true",
         "description":[
             {
@@ -113,14 +146,43 @@
                 "name":"pool",
                 "status": true
             }
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"11/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"13/01/2023",
+                    "amount":3000
+                }
+            ]
+        },
+        "days":[
+            "23/01/2023",
+            "24/01/2023",
+            "26/01/2023",
+            "30/01/2023",
+            "31/01/2023"
+
+
         ]
         
     }
     ,
     {
-        "id": "4",
+        "id": 4,
         "name": "Villa BCıdırık",
-        "location": "Antalya/Kaş",
+        "location": "Kalkan",
         "status": "true",
         "description":[
             {
@@ -147,13 +209,40 @@
                 "name":"pool",
                 "status": true
             }
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"20/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"16/01/2023",
+                    "amount":3000
+                }
+            ]
+        }
+        ,"days":[
+            "08/01/2023",
+            "09/01/2023",
+            "23/01/2023",
+            "24/01/2023",
+            "25/01/2023"
         ]
         
     },
     {
-        "id": "5",
-        "name": "Villa BCıdırık",
-        "location": "Antalya/Kaş",
+        "id": 5,
+        "name": "Villa Zübük",
+        "location": "Kalkan",
         "status": "true",
         "description":[
             {
@@ -180,7 +269,94 @@
                 "name":"pool",
                 "status": true
             }
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"09/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"10/01/2023",
+                    "amount":3000
+                }
+            ]
+        }
+        ,
+        "days":[
+            "08/01/2023",
+            "09/01/2023",
+            "24/01/2023",
+            "25/01/2023"
         ]
         
+    }
+    , {
+        "id":6,
+        "name": "Villa Perla",
+        "location": "Tırmısın",
+        "status": "true",
+        "description":[
+            {
+                "bed":2,
+                "badrooms":1,
+                "peoples":2
+            }
+        ],
+        "costs":"5500~10000",
+        "features":[
+            {
+                "id":1,
+                "name":"jakuzi",
+                "status":true
+            },
+            {
+                "id":2,
+                "name":"garden",
+                "status": false
+
+            },
+            {
+                "id":3,
+                "name":"pool",
+                "status": true
+            }
+        ],
+        "payments":{
+            "firstPay":100,
+            "dailyPayment":[
+                {
+                    "id":1,
+                    "day":"08/01/2023",
+                    "amount":2000
+                },
+                {
+                    "id":2,
+                    "day":"09/01/2023",
+                    "amount":3000
+                },
+                {
+                    "id":3,
+                    "day":"11/01/2023",
+                    "amount":3000
+                }
+            ]
+        },
+        "days":[
+            "24/01/2023",
+            "25/01/2023",
+            "26/01/2023",
+            "27/01/2023",
+            "28/01/2023"
+
+        ]
     }
 ]

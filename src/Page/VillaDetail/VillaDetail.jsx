@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useState } from 'react'
-import '../Villa/villa.css'
+import './villaDetail.css'
 import { BiBed, BiBath, BiCheck, BiXCircle, BiPlusCircle, BiX } from "react-icons/bi"
 import { BsPeople, BsCalendarCheck } from 'react-icons/bs'
 import banner from "../../banne.json"
@@ -13,10 +13,11 @@ import format from 'date-fns/format';
 
 
 
-const Villa = () => {
+const VillaDetail = () => {
     const { villaID } = useParams()
     const [index, setIndex] = useState(1)
     const [count, setCount] = useState(0)
+    const [payment, setPayment] = useState(null)
     const [rangeDate, setRangeDate] = useState({
         start: new Date(),
         end: new Date()
@@ -33,6 +34,7 @@ const Villa = () => {
                 guest: count,
                 start: rangeDate.start,
                 end: rangeDate.end,
+                payment: payment,
             }
         })
     }
@@ -129,7 +131,15 @@ const Villa = () => {
                                                 : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle /></button>
                                             }
                                         </div>
-                                        <SelectBox element={["cash", "kk", "coin"]} placeholder={"Select Payment"} />
+                                        <SelectBox selectValue={setPayment} element={[
+                                            {
+                                                id: 1,
+                                                name: "Cash"
+                                            }, {
+                                                id: 2,
+                                                name: "Credit Card"
+                                            }
+                                        ]} placeholder={"Select Payment"} />
 
                                     </div>
                                     <div className='villa-reservation-payment'>
@@ -146,7 +156,7 @@ const Villa = () => {
                                         </div>
                                     </div>
                                     <div className='villa-reservation-payment-submit' >
-                                        <button onClick={rezHandle}>Res</button>
+                                        <button onClick={rezHandle}>Reserved</button>
                                     </div>
                                 </div>
                             </div>
@@ -186,4 +196,4 @@ const Villa = () => {
     )
 }
 
-export default Villa
+export default VillaDetail

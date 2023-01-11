@@ -7,10 +7,9 @@ import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
 
 const Card = ({ id, banner, villaName, villaLocation, villaCost, villaDescription }) => {
     const [index, setIndex] = useState(1)
-    console.log(index)
     return (
         <div className='card'  >
-            <NavLink className="card-link" to={"villa/" + id} >
+            <NavLink className="card-link" to={"villa-detail/" + id} >
                 {banner.map(image =>
                     image.id === index &&
                     <img key={image.id} className='card-img' alt={image.id} src={image.img} />
@@ -30,7 +29,7 @@ const Card = ({ id, banner, villaName, villaLocation, villaCost, villaDescriptio
                         </div>
                     </div>
                     {villaDescription.map((item) => (
-                        <div key={item[0]} className='card-desc'>
+                        <div key={item[0].index} className='card-desc'>
                             <div className='card-desc-detail'>
                                 <div className='card-icon'><BiBed /></div>
                                 <p>Bed</p>

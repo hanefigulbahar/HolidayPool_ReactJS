@@ -1,9 +1,10 @@
 import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
-import Villa from "./Page/Villa/Villa";
 import ScrollToTop from "./ScrollToTop";
 import Reservation from "./Page/Reservation/Reservation";
 import Layout from "./Page/Layout/Layout";
+import VillaDetail from "./Page/VillaDetail/VillaDetail";
+import Villas from "./Page/Villas/Villas";
 function App() {
   return (
     <div className="App">
@@ -12,10 +13,10 @@ function App() {
       <Routes>
             <Route path="/" element={<Layout/>} >
             <Route index={true} element={<HomePage/>} />
-            <Route path="villa/:villaID" element={<Villa/>}/>
+            <Route path="villa-detail/:villaID" element={<VillaDetail/>}/>
+            <Route path="villas" element={<Villas/>}/>
           </Route>
           <Route path="reservation" element={<Reservation/>} />
-
       </Routes>
 
     </div>
