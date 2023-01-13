@@ -9,7 +9,7 @@ const Card = ({ id, banner, villaName, villaLocation, villaCost, villaDescriptio
     const [index, setIndex] = useState(1)
     return (
         <div className='card'  >
-            <NavLink className="card-link" to={"villa-detail/" + id} >
+            <NavLink className="card-link" to={"/villa-detail/" + id} >
                 {banner.map(image =>
                     image.id === index &&
                     <img key={image.id} className='card-img' alt={image.id} src={image.img} />

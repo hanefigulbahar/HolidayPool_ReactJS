@@ -5,10 +5,13 @@ import logo from "../../../src/logos.png"
 import Footer from '../../Component/Footer/Footer'
 import { BiStar } from 'react-icons/bi'
 import format from 'date-fns/format';
+import products from "../../product.json"
 
 const Reservation = () => {
     const location = useLocation();
     const datas = location.state
+    const days = Math.floor((datas.end - datas.start) / (24 * 60 * 60 * 1000));
+    console.log(days)
     console.log(datas)
     return (
         <>
@@ -59,38 +62,33 @@ const Reservation = () => {
                 </div>
                 <div className='rez-info'>
                     <div className='rez-card-header'>
-                        <div className='rez-info-img'></div>
+                        <div className='rez-info-img'><img src='https://lh3.googleusercontent.com/p/AF1QipOWr7de7974PD3eGtI14-2KCuKaYEtpteNfJSc0=s1360-w1360-h1020' alt=''></img></div>
                         <div className='rez-villa-info'>
-                            <div className='rez-villa-info-name'>villa name/villa decs</div>
+                            <div className='rez-villa-info-name'>{products.map(product => product.id === datas.villaID && product.name)}</div>
                             <div className='rez-villa-info-rating'>
                                 <div className='rez-villa-info-rating-icon'><BiStar /></div>
                                 <div>4.5</div>
                             </div>
                         </div>
                     </div>
-                    <div className='rez-info-payment'>
-                        <div className='rez-info-payment-title'>Price Detail</div>
-                        <div className='rez-info-payment-detail'>
-                            <div>First amound</div>
-                            <div>100₺</div>
+                    {products.map(product => product.id === datas.villaID &&
+                        <div className='rez-info-payment'>
+                            <div className='rez-info-payment-title'>Price Detail</div>
+                            <div className='rez-info-payment-detail'>
+                                <div>First amound</div>
+                                <div>{product.payments.firstPay} ₺</div>
+                            </div>
+                            <div className='rez-info-payment-detail'>
+                                <div>Villa amount</div>
+                                <div>{product.payments.payment} ₺</div>
+                            </div>
+                            <div className='rez-info-payment-detail'>
+                                <div>Total</div>
+                                <div>{Number(product.payments.firstPay) + Number(product.payments.payment)} ₺</div>
+                            </div>
                         </div>
-                        <div className='rez-info-payment-detail'>
-                            <div>Villa amount</div>
-                            <div>3000 ₺</div>
-                        </div>
-                        <div className='rez-info-payment-detail'>
-                            <div>Extra service</div>
-                            <div>30 ₺</div>
-                        </div>
-                        <div className='rez-info-payment-detail discound'>
-                            <div>Discound</div>
-                            <div>-300 ₺</div>
-                        </div>
-                        <div className='rez-info-payment-detail'>
-                            <div>Total</div>
-                            <div>31000 ₺</div>
-                        </div>
-                    </div>
+                    )}
+
                 </div>
 
             </div>

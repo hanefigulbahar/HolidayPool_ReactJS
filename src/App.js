@@ -13,10 +13,11 @@ function App() {
       <Routes>
             <Route path="/" element={<Layout/>} >
             <Route index={true} element={<HomePage/>} />
-            <Route path="villa-detail/:villaID" element={<VillaDetail/>}/>
             <Route path="villas" element={<Villas/>}/>
           </Route>
           <Route path="reservation" element={<Reservation/>} />
+          <Route path="villa-detail/:villaID" element={<VillaDetail/>}/>
+
       </Routes>
 
     </div>

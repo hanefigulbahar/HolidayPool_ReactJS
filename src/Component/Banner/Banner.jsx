@@ -10,14 +10,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Banner = () => {
-    //const [villaName, setVillaName] = useState(null)
+
     const [checkin, setCheckin] = useState(new Date());
     const [checkout, setCheckout] = useState(new Date());
     const [location, setLocation] = useState(null)
 
     console.log("checkin", checkin)
     console.log("checkout", checkout)
-    //console.log("name", villaName)
 
     const seacrhNav = useNavigate()
 

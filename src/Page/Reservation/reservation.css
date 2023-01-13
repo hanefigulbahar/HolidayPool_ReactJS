@@ -123,8 +123,13 @@
 }
 .rez-info-img{
     background: rgba(132, 148, 180, 0.5);
-    width: 40%;
+    width: 50%;
     border-radius: .5rem;
+}
+.rez-info-img img{
+    width: 100%;
+    border-radius: .5rem;
+
 }
 .rez-villa-info{
     display: flex;
@@ -146,8 +151,7 @@
 .rez-info-payment{
     display: flex;
     flex-direction: column;
-
-    gap: 30px;
+    gap: 40px;
     padding: 0 2rem;
     font-weight: 300;
     font-size: 1.1rem;
@@ -168,5 +172,6 @@
     color: rgb(0, 0, 0 ,0.7);
     border-top:1px solid #8494b4;
     padding:10px 0 ;
+    bottom: 0;
     font-weight: 400;
 }   

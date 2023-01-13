@@ -19,6 +19,7 @@ const Villas = () => {
 
     return (
         <div className='villas-container'>
+
             {datas.location === null
                 ? villaCheckOutData.map(item =>
                     <Card banner={banner} key={item.id} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />
