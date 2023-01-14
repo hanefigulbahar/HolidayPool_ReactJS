@@ -19,15 +19,22 @@ const Villas = () => {
 
     return (
         <div className='villas-container'>
-
-            {datas.location === null
-                ? villaCheckOutData.map(item =>
-                    <Card banner={banner} key={item.id} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />
-                )
-                : villaLocation.map(item =>
-                    <Card banner={banner} key={item.id} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />
-                )
-            }
+            <div className="villas-banner" >
+                <img src="https://cdn10.agoda.net/images/accommodation/backdrop/private-villas.jpg" alt="" />
+                <div className="villas-title">For the best holiday</div>
+            </div>
+            <div className="villas-content">
+                <div className="villas-content-detail">
+                    {datas.location === null
+                        ? villaCheckOutData.map(item =>
+                            <Card banner={banner} key={item.id} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />
+                        )
+                        : villaLocation.map(item =>
+                            <Card banner={banner} key={item.id} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />
+                        )
+                    }
+                </div>
+            </div>
         </div>
     )
 }

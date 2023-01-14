@@ -17,7 +17,6 @@ const Header = () => {
                 <ul class="menu">
                     <li><a href='#'>About-Us</a></li>
                     <li><a href='#'>Contact</a></li>
-                    <li><a href='#'>Product</a></li>
                 </ul>
             </div>
         </>

@@ -1,0 +1,1 @@
+export * as VillaService from "./villas";
