@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 //import { BiSearchAlt } from "react-icons/bi";
 import { BsCalendarCheck, BsCalendarX } from "react-icons/bs";
 import { MdKeyboardArrowDown } from 'react-icons/md'
@@ -11,8 +11,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
 
-    const [checkin, setCheckin] = useState(new Date());
-    const [checkout, setCheckout] = useState(new Date());
+    const [checkin, setCheckin] = useState(null);
+    const [checkout, setCheckout] = useState(null);
     const [location, setLocation] = useState(null)
 
     console.log("checkin", checkin)
@@ -23,18 +23,15 @@ const Banner = () => {
     const searchHandle = () => {
         seacrhNav(`villas`, {
             state: {
-                checkin: checkin === null ? new Date() : checkin,
-                checkout: checkout === null ? new Date() : checkout,
+                checkin: checkin,
+                checkout: checkout,
                 location
             }
         })
     }
-    /*
-    <div className='rez'>
-        <input onChange={(e) => setVillaName(e.target.value)} className="banner-search" placeholder='Search Villa Name' type="text" />
-        <span><BiSearchAlt className='icons' /></span>
-    </div>
-     */
+
+
+
     return (
         <div className='banner'>
             <div className='input-group'>

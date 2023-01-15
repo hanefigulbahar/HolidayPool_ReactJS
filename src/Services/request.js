@@ -3,12 +3,11 @@ function request(url , data=false , method="GET"){
        
      const response = await fetch(process.env.REACT_APP_API_URL + url)
      const result = await response.json()
-     
-      if (response.ok){
-         resolve(result)
+     if (result!==null){
+      resolve(result)
       }else{
-         reject(response.status)
-      }
+      reject(response.status)
+   }
     })
 }
 
