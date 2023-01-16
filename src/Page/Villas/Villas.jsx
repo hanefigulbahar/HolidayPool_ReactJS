@@ -26,7 +26,7 @@ const Villas = () => {
                 )
         }
 
-    }, [])
+    }, [villaFilterValues.location])
 
     function filterDataWithDate(products) {
         let filteredData = products

@@ -55,8 +55,8 @@ const Card = ({ id, banner, villaName, villaLocation, villaCost, villaDescriptio
             <button onClick={() => { setIndex(index === banner.length ? 1 : index + 1) }} className='card-button right'><MdArrowForwardIos className='card-button-icon' /></button>
             <div className='dot-container'>
                 {banner.map(item => item.id === index
-                    ? <span onClick={() => setIndex(item.id)} id={item.id} class="dot active"></span>
-                    : <span onClick={() => setIndex(item.id)} id={item.id} class="dot"></span>
+                    ? <span key={item.id} onClick={() => setIndex(item.id)} id={item.id} class="dot active"></span>
+                    : <span key={item.id} onClick={() => setIndex(item.id)} id={item.id} class="dot"></span>
                 )}
             </div>
         </div>

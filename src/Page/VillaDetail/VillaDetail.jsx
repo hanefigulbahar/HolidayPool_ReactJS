@@ -5,7 +5,6 @@ import { BsPeople, BsCalendarCheck } from 'react-icons/bs'
 import banner from "../../banne.json"
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md"
 import DatePickerRange from '../../Component/DatePickerRange/DatePickerRange'
-import SelectBox from '../../Component/SelectBox/SelectBox'
 import { useParams, useNavigate } from 'react-router-dom'
 import { VillaService } from "../../Services"
 
@@ -14,13 +13,12 @@ const VillaDetail = () => {
     const [villaData, setVillaData] = useState()
     const [index, setIndex] = useState(1)
     const [count, setCount] = useState(0)
-    const [paymentType, setPaymentType] = useState(null)
+
     const [rangeDate, setRangeDate] = useState({
         start: new Date(),
         end: new Date()
     })
     const navigate = useNavigate()
-
     const rezHandle = () => {
         navigate(`/reservation`, {
             state: {
@@ -28,7 +26,6 @@ const VillaDetail = () => {
                 guest: count,
                 start: rangeDate.start,
                 end: rangeDate.end,
-                paymentType: paymentType,
             }
         })
     }
@@ -37,7 +34,7 @@ const VillaDetail = () => {
         VillaService.getVillaById(villaID)
             .then(res => (setVillaData(res)))
             .catch(("hello"))
-    }, [])
+    }, [villaID])
     return (
         <>
             <div key={villaData?.id}>
@@ -107,15 +104,6 @@ const VillaDetail = () => {
                                     : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle /></button>
                                 }
                             </div>
-                            <SelectBox selectValue={setPaymentType} element={[
-                                {
-                                    id: 1,
-                                    name: "Cash"
-                                }, {
-                                    id: 2,
-                                    name: "Credit Card"
-                                }
-                            ]} placeholder={"Select Payment"} />
                         </div>
                         <div className='villa-reservation-payment'>
                             <div className='villa-reservation-payment-first'>

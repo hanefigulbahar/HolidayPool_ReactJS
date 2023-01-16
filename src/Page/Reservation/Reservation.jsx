@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import "../Reservation/reservation.css"
 import logo from "../../../src/logos.png"
 import Footer from '../../Component/Footer/Footer'
 import { BiStar } from 'react-icons/bi'
 import format from 'date-fns/format';
-import products from "../../product.json"
+import "../Reservation/reservation.css"
+import { VillaService } from '../../Services'
+
 
 const Reservation = () => {
+    const [data, setData] = useState()
     const location = useLocation();
-    const datas = location.state
-    const days = Math.floor((datas.end - datas.start) / (24 * 60 * 60 * 1000));
-    console.log(days)
-    console.log(datas)
+    const days = Math.floor((location.state.end - location.state.start) / (24 * 60 * 60 * 1000));
+
+    useEffect(() => {
+        VillaService.getVillaById(location.state.villaID)
+            .then(res => setData(res))
+            .catch(err => console.log(err))
+    }, [location.state.villaID])
+
     return (
         <>
             <div className="rez-header">
@@ -27,15 +33,15 @@ const Reservation = () => {
                     <div className='rez-detail-date'>
                         <div className='rez-detail-date-check in'>
                             <div>Check-in</div>
-                            <div>{format(datas.start, "dd/MM/yyyy")}</div>
+                            <div>{format(location.state.start, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check out'>
                             <div>Check-out</div>
-                            <div>{format(datas.end, "dd/MM/yyyy")}</div>
+                            <div>{format(location.state.end, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check'>
                             <div>Guest</div>
-                            <div>{datas.guest}</div>
+                            <div>{location.state.guest}</div>
                         </div>
                     </div>
                     <div className='rez-confirm-detail'>
@@ -64,33 +70,29 @@ const Reservation = () => {
                     <div className='rez-card-header'>
                         <div className='rez-info-img'><img src='https://lh3.googleusercontent.com/p/AF1QipOWr7de7974PD3eGtI14-2KCuKaYEtpteNfJSc0=s1360-w1360-h1020' alt=''></img></div>
                         <div className='rez-villa-info'>
-                            <div className='rez-villa-info-name'>{products.map(product => product.id === datas.villaID && product.name)}</div>
+                            <div className='rez-villa-info-name'>{data?.name}</div>
                             <div className='rez-villa-info-rating'>
                                 <div className='rez-villa-info-rating-icon'><BiStar /></div>
                                 <div>4.5</div>
                             </div>
                         </div>
                     </div>
-                    {products.map(product => product.id === datas.villaID &&
-                        <div className='rez-info-payment'>
-                            <div className='rez-info-payment-title'>Price Detail</div>
-                            <div className='rez-info-payment-detail'>
-                                <div>First amound</div>
-                                <div>{product.payments.firstPay} ₺</div>
-                            </div>
-                            <div className='rez-info-payment-detail'>
-                                <div>Villa amount</div>
-                                <div>{Number(product.payments.payment) * days} ₺</div>
-                            </div>
-                            <div className='rez-info-payment-detail'>
-                                <div>Total</div>
-                                <div>{Number(product.payments.firstPay) + Number(product.payments.payment) * days} ₺</div>
-                            </div>
+                    <div className='rez-info-payment'>
+                        <div className='rez-info-payment-title'>Price Detail</div>
+                        <div className='rez-info-payment-detail'>
+                            <div>First amound</div>
+                            <div>{data?.payments.firstPay} ₺</div>
                         </div>
-                    )}
-
+                        <div className='rez-info-payment-detail'>
+                            <div>Villa amount</div>
+                            <div>{(data?.payments.payment) * days} ₺</div>
+                        </div>
+                        <div className='rez-info-payment-detail'>
+                            <div>Total</div>
+                            <div>{((data?.payments.payment) * days) + data?.payments.firstPay} ₺</div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <Footer />
         </>
