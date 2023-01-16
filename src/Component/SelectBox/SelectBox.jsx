@@ -28,7 +28,7 @@ const SelectBox = ({ selectValue, placeholder, element }) => {
             <div ref={selectRef}>
                 {open &&
                     <div className="selectElement">
-                        {element.map(el => <option key={el.id} onClick={() => (setValue(el.name))} className='optionElement'>{el.name}</option>)}
+                        {element.map(el => <option onClick={() => (setValue(el))} className='optionElement'>{el}</option>)}
                     </div>
                 }
 

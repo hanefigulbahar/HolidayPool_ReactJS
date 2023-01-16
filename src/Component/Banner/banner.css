@@ -50,7 +50,13 @@
     text-align: center;
     padding: 0;
     color: white;
-    background: #9aa7bc;
+    background: #768eb6;
+
+}
+.search-button:disabled{
+    background: #a3bcee;
+    color: grey;
+
 
 }
 
