@@ -33,7 +33,7 @@ const VillaDetail = () => {
     useEffect(() => {
         VillaService.getVillaById(villaID)
             .then(res => (setVillaData(res)))
-            .catch(("hello"))
+            .catch(err => console.error(err))
     }, [villaID])
     return (
         <>
@@ -72,10 +72,6 @@ const VillaDetail = () => {
                         ))}
                     </div>
                 </div>
-                <div className='villa-container-header'>
-                    <div className='villa-container-reating'>rating</div>
-                    <div className='villa-container-location'>location</div>
-                </div>
                 <div className='villa-container'>
                     <div className='villa-container-content'>
                         {banner.map(image =>
@@ -87,22 +83,23 @@ const VillaDetail = () => {
                         <button className='villa-container-content-backward' onClick={() => { setIndex(index === 1 ? banner.length : index - 1) }}><MdArrowBackIosNew className='villa-slider-icon' /></button>
                     </div>
                     <div className='villa-reservation'>
-                        <div className='villa-reservation-title'>Reservation {"Villa Abosa"}</div>
+                        <div className='villa-reservation-title'>Reservation {villaData?.name}</div>
                         <div className='villa-reservation-date'>
                             <DatePickerRange setRangeDate={setRangeDate} />
                             <span><BsCalendarCheck className="icons" /></span>
                         </div>
                         <div className='villa-reservation-input-group'>
-                            <div>
+                            <div className='villa-reservation-guest'>
+                                {count === 0
+                                    ? <button disabled className='villa-reservarion-negative'><BiXCircle /></button>
+                                    : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle className='guest-icon' /></button>
+                                }
                                 {count === 0
                                     ? <input readOnly type="text" placeholder='Choose the number of people' />
                                     : <input readOnly type="text" value={count} />}
 
-                                <button onClick={() => { setCount(count + 1) }} className='villa-reservarion-plus'><BiPlusCircle /></button>
-                                {count === 0
-                                    ? <button disabled className='villa-reservarion-negative'><BiXCircle /></button>
-                                    : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle /></button>
-                                }
+                                <button onClick={() => { setCount(count + 1) }} className='villa-reservarion-plus'><BiPlusCircle className='guest-icon' /></button>
+
                             </div>
                         </div>
                         <div className='villa-reservation-payment'>

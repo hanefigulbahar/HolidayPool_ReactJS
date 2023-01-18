@@ -18,6 +18,7 @@ const SelectBox = ({ selectValue, placeholder, element }) => {
             setOpen(false)
         }
     }
+    console.log(element)
     return (
         <div className='selectWrap'>
             <input
@@ -28,7 +29,12 @@ const SelectBox = ({ selectValue, placeholder, element }) => {
             <div ref={selectRef}>
                 {open &&
                     <div className="selectElement">
-                        {element.map(el => <option onClick={() => (setValue(el))} className='optionElement'>{el}</option>)}
+
+                        {element.length === 0
+                            ? <div className='optionElement not'>Bulunamadi</div>
+                            : element.map(el => <div key={el} onClick={() => (setValue(el))} className='optionElement'>{el}</div>)
+
+                        }
                     </div>
                 }
 

@@ -13,7 +13,7 @@ const Banner = () => {
     const [checkin, setCheckin] = useState(null);
     const [checkout, setCheckout] = useState(null);
     const [location, setLocation] = useState(null)
-    const [locationData, setLocationData] = useState()
+    const [locationData, setLocationData] = useState([])
 
     console.log("checkin", checkin)
     console.log("checkout", checkout)
@@ -33,7 +33,7 @@ const Banner = () => {
     useEffect(() => {
         VillaService.getLocation()
             .then(res => setLocationData(res))
-            .catch(err => console.log(err))
+            .catch(setLocationData([]))
     }, [])
 
     return (
