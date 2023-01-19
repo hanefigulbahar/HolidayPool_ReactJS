@@ -4,6 +4,8 @@
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  
 </p>
 
 ## :calling: About
@@ -35,6 +37,12 @@ The website for villa rental.
   <img src="https://user-images.githubusercontent.com/90277530/213428672-2349d4d4-36bd-49a8-af6f-10f94f34835f.png" width="250" />
  
 </p>
+
+## :gear: Setup
+Server repo must be cloned and setup first - [Server](https://github.com/hanefigulbahar/HolidayPool_Server)
+<br/>
+After the server started this project can be run with npm start
+
 ## :memo: License 
 This project is under the terms of the MIT license.
 <br/>
