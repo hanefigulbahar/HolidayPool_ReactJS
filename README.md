@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="#calling-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :calling: About
+The website for villa rental.
 
-## Available Scripts
+## :gear: Technologies
 
-In the project directory, you can run:
+- [React](https://github.com/facebook/react)
+- [ReactRouter](https://reactrouter.com)
+- [Redux-Toolkit](https://redux-toolkit.js.org/)
 
-### `npm start`
+## :sparkles: Main Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- All villas can be listed.
+- Villas can be searched by location, check-in and check-out date.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :camera_flash: Screenshots
 
-### `npm test`
+<p>
+  <img src="https://user-images.githubusercontent.com/90277530/213427209-50a7867f-f9ee-44f4-b0b2-de0d3db9bc19.png" width="250" height:"250" /> 
+  <img src="https://user-images.githubusercontent.com/90277530/213428141-fa05fa2f-4fb0-4f4d-81fb-473f2805cc65.png" width="250" height:"250" />
+  <img src="https://user-images.githubusercontent.com/90277530/213428165-cb76a6cb-4dd8-4f3d-8fce-e19b5e92345e.png" width="250" height:"250" />
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## :camera_flash: Screenshots-Mobil
+<p float="top">
+  <img src="https://user-images.githubusercontent.com/90277530/213428653-dcfa98a3-d8e9-40f9-af1a-9ac687fa7cf1.png" width="100" /> 
+   <img src="https://user-images.githubusercontent.com/90277530/213428719-dfbcc961-cee5-483f-b1e8-5b00743da567.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/90277530/213428672-2349d4d4-36bd-49a8-af6f-10f94f34835f.png" width="250" />
+ 
+</p>
+## :memo: License 
+This project is under the terms of the MIT license.
+<br/>
+<br/>
+Contact: https://www.linkedin.com/in/hanefigulbahar/
