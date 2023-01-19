@@ -1,57 +1,54 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsCalendarCheck, BsCalendarX } from "react-icons/bs";
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import DatePicker from '../DatePicker/DatePicker';
-import '../Banner/banner.css'
 import SelectBox from '../SelectBox/SelectBox';
-import { useNavigate } from 'react-router-dom';
 import { VillaService } from '../../Services';
+import { setLocationData } from '../../Feature/locationSlice';
+import '../Banner/banner.css'
+
+
 
 
 const Banner = () => {
-
-    const [checkin, setCheckin] = useState(null);
-    const [checkout, setCheckout] = useState(null);
-    const [location, setLocation] = useState(null)
-    const [locationData, setLocationData] = useState([])
-
-    console.log("checkin", checkin)
-    console.log("checkout", checkout)
+    const dispacth = useDispatch()
+    const selectedLocation = useSelector(state => state.selectLocationSlice)
+    const checkInData = useSelector(state => state.datePickerSlice.checkIn)
+    const checkOutData = useSelector(state => state.datePickerSlice.checkIn)
 
     const seacrhNav = useNavigate()
-
     const searchHandle = () => {
         seacrhNav(`villas`, {
             state: {
-                checkin: checkin,
-                checkout: checkout,
-                location
+                checkin: checkInData,
+                checkout: checkOutData,
+                location: selectedLocation
             }
         })
     }
-
     useEffect(() => {
         VillaService.getLocation()
-            .then(res => setLocationData(res))
-            .catch(setLocationData([]))
-    }, [])
-
+            .then(res => dispacth(setLocationData(res)))
+            .catch(dispacth(setLocationData([])))
+    }, [dispacth])
     return (
         <div className='banner'>
             <div className='input-group'>
                 <div className='rez'>
-                    <DatePicker check={checkin} min={new Date()} inputCheck={"Check-in"} setCheck={setCheckin} />
+                    <DatePicker min={new Date()} inputCheck={"Check-in"} />
                     <span><BsCalendarCheck className="icons" /></span>
                 </div>
                 <div className='rez'>
-                    <DatePicker check={checkout} min={checkin} inputCheck={"Check-out"} setCheck={setCheckout} />
+                    <DatePicker inputCheck={"Check-out"} />
                     <span><BsCalendarX className="icons" /></span>
                 </div>
                 <div className='rez'>
-                    <SelectBox selectValue={setLocation} element={locationData} placeholder={"Select Location"} />
+                    <SelectBox placeholder={"Select Location"} />
                     <span><MdKeyboardArrowDown className="icons" /></span>
                 </div>
-                {location === null && checkin === null
+                {selectedLocation === null && checkInData === null
                     ? <button disabled onClick={searchHandle} className='search-button'>Search</button>
                     : <button onClick={searchHandle} className='search-button'>Search</button>
                 }

@@ -43,7 +43,7 @@ const VillaDetail = () => {
                     <div className='villa-content'>
                         <div className='villa-title'>
                             <div className='villa-name'>{villaData?.name}</div>
-                            <div className='villa-description'>Villa desc</div>
+                            <div className='villa-description'>Villa Explanation</div>
                         </div>
                         {villaData?.description.map((item) => (
                             <div className='villa-detail'>
@@ -74,9 +74,9 @@ const VillaDetail = () => {
                 </div>
                 <div className='villa-container'>
                     <div className='villa-container-content'>
-                        {banner.map(image =>
+                        {banner.map((image, index) =>
                             image.id === index &&
-                            <img key={image.id} className='villa-container-content-img' src={image.img} alt={image.id} />
+                            <img key={index} className='villa-container-content-img' src={image.img} alt={image.id} />
                         )}
                         <button className='villa-container-content-foward' onClick={() => { setIndex(index === banner.length ? 1 : index + 1) }}><MdArrowForwardIos className='villa-slider-icon' /></button>
 
@@ -95,7 +95,7 @@ const VillaDetail = () => {
                                     : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle className='guest-icon' /></button>
                                 }
                                 {count === 0
-                                    ? <input readOnly type="text" placeholder='Choose the number of people' />
+                                    ? <input readOnly type="text" placeholder='Guest' />
                                     : <input readOnly type="text" value={count} />}
 
                                 <button onClick={() => { setCount(count + 1) }} className='villa-reservarion-plus'><BiPlusCircle className='guest-icon' /></button>
@@ -104,15 +104,15 @@ const VillaDetail = () => {
                         </div>
                         <div className='villa-reservation-payment'>
                             <div className='villa-reservation-payment-first'>
-                                <div>Ön Ödeme</div>
+                                <div>Advance payment</div>
                                 <div>{villaData?.payments.firstPay} ₺</div>
                             </div>
                             <div className='villa-reservation-payment-cost'>
-                                <div>Villa Ücreti</div>
+                                <div>Villa fee</div>
                                 <div>{villaData?.payments.payment} ₺</div>
                             </div>
                             <div className='villa-reservation-payment-total'>
-                                <div>Toplam</div>
+                                <div>Total</div>
                                 <div>{Number(villaData?.payments.payment) + Number(villaData?.payments.firstPay)} ₺</div>
                             </div>
                         </div>
@@ -123,10 +123,10 @@ const VillaDetail = () => {
                 </div>
                 <div className='villa-container-content-detail'>
                     <ul className='villa-container-content-feature'>
-                        {villaData?.features.map(feature => (
+                        {villaData?.features.map((feature, index) => (
                             feature.status === true
-                                ? <li key={feature.id} className='villa-container-content-feature-detail'><BiCheck className='villa-container-content-feature-icon' /><p>{feature.name}</p></li>
-                                : <li key={feature.id} className='villa-container-content-feature-detail negative'><BiX className='villa-container-content-feature-icon icon-negative ' /><p>{feature.name}</p></li>
+                                ? <li key={index} className='villa-container-content-feature-detail'><BiCheck className='villa-container-content-feature-icon' /><p>{feature.name}</p></li>
+                                : <li key={index} className='villa-container-content-feature-detail negative'><BiX className='villa-container-content-feature-icon icon-negative ' /><p>{feature.name}</p></li>
                         )
                         )}
                     </ul>
@@ -134,11 +134,11 @@ const VillaDetail = () => {
                 <div className='villa-container-content-description'>
                     <div className='villa-container-content-description-detail'>
                         <div>
-                            <h1>Açıklama</h1>
+                            <h1>Explanation</h1>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias doloremque quo exercitationem corporis ipsum adipisci reprehenderit magni eligendi ab tempore, quisquam ratione tempora neque possimus dolorum necessitatibus, explicabo quis. Explicabo?</p>
                         </div>
                         <div>
-                            <h1>Açıklama</h1>
+                            <h1>Explanation</h1>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias doloremque quo exercitationem corporis ipsum adipisci reprehenderit magni eligendi ab tempore, quisquam ratione tempora neque possimus dolorum necessitatibus, explicabo quis. Explicabo?</p>
                         </div>
                     </div>

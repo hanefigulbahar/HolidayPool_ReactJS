@@ -1,39 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLocation } from '../../Feature/selectLocationSlice';
 import '../SelectBox/selectbox.css'
 
-const SelectBox = ({ selectValue, placeholder, element }) => {
+const SelectBox = ({ placeholder }) => {
+    const dispacth = useDispatch()
+    const selectedLocation = useSelector(state => state.selectLocationSlice.value)
+    const locationDatas = useSelector(state => state.locationSlice)
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
     const selectRef = useRef(null)
-    console.log(value)
+
     useEffect(() => {
         document.addEventListener("click", hideOnClickOutside, true)
     })
-    useEffect(() => {
-        selectValue(value)
-    }, [selectValue, value])
+
     const hideOnClickOutside = (e) => {
         if (selectRef.current && !selectRef.current.contains(e.target)) {
             document.addEventListener("click", hideOnClickOutside, true)
             setOpen(false)
         }
     }
-    console.log(element)
     return (
         <div className='selectWrap'>
             <input
                 readOnly
-                placeholder={value ? value : placeholder}
+                placeholder={selectedLocation ? selectedLocation : placeholder}
                 onClick={() => setOpen(open => !open)}
             />
             <div ref={selectRef}>
                 {open &&
                     <div className="selectElement">
-
-                        {element.length === 0
+                        {locationDatas?.length === 0
                             ? <div className='optionElement not'>Bulunamadi</div>
-                            : element.map(el => <div key={el} onClick={() => (setValue(el))} className='optionElement'>{el}</div>)
-
+                            : locationDatas.map(el => <div key={el} onClick={() => (dispacth(selectLocation(el)))} className='optionElement'>{el}</div>)
                         }
                     </div>
                 }

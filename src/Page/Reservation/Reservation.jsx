@@ -80,11 +80,11 @@ const Reservation = () => {
                     <div className='rez-info-payment'>
                         <div className='rez-info-payment-title'>Price Detail</div>
                         <div className='rez-info-payment-detail'>
-                            <div>First amound</div>
+                            <div>Advance payment</div>
                             <div>{data?.payments.firstPay} ₺</div>
                         </div>
                         <div className='rez-info-payment-detail'>
-                            <div>Villa amount</div>
+                            <div>Villa fee</div>
                             <div>{(data?.payments.payment) * days} ₺</div>
                         </div>
                         <div className='rez-info-payment-detail'>

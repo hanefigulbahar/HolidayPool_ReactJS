@@ -5,9 +5,15 @@ import format from 'date-fns/format';
 import '../DatePicker/datepicker.css'
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCheckInData, setCheckOutData } from '../../Feature/datePickerSlice';
 
 
-const DatePicker = ({ setCheck, inputCheck, min }) => {
+const DatePicker = ({ inputCheck }) => {
+    const dispatch = useDispatch()
+    const checkInData = useSelector(state => state.datePickerSlice.checkIn)
+    const checkOutData = useSelector(state => state.datePickerSlice.checkOut)
+
     const nameMapper = {
         de: 'German',
         enGB: 'English (United Kingdom)',
@@ -16,30 +22,21 @@ const DatePicker = ({ setCheck, inputCheck, min }) => {
         tr: 'Turkish',
     };
 
-    const rez = [
-        new Date("11/10/2022"),
-    ]
+    const rez = []
 
-    const [date, setDate] = useState(null);
     const [open, setOpen] = useState(false);
     const [locale, setLocale] = React.useState('tr');
     const inputRef = useRef(null)
-
 
     useEffect(() => {
         document.addEventListener("click", hideOnClickOutside, true)
     })
 
-    useEffect(() => {
-        setCheck(date)
-    }, [date, setCheck])
-
-
     const localeOptions = Object.keys(locales).map(key => ({
         value: key,
         label: `${key} - ${nameMapper[key] || ''}`
     })).filter(item => nameMapper[item.value]);
-    console.log(inputRef.current)
+
     const hideOnClickOutside = (e) => {
         if (inputRef.current && inputRef.current.contains(e.target)) {
             document.addEventListener("click", hideOnClickOutside, true)
@@ -47,18 +44,29 @@ const DatePicker = ({ setCheck, inputCheck, min }) => {
         }
     }
 
+    function setSelectedDate(date) {
+        inputCheck === "Check-in" ? dispatch(setCheckInData(date)) : dispatch(setCheckOutData(date));
+    }
+
+    function setMinDate(inputCheck) {
+        return inputCheck === "Check-in" ? new Date() : checkInData;
+    }
+
+    const showSelectedDate = (check) => {
+        if (check === "Check-in") return checkInData
+        if (check === "Check-out") return checkOutData
+    }
     return (
         <div className='calendarWrap'>
-            {date !== null
+            {checkInData !== null && checkOutData !== null
                 ? <input
-                    value={format(date, "dd/MM/yyyy")}
-                    placeholder={inputCheck}
+                    value={showSelectedDate(inputCheck)}
                     readOnly
                     className="inputBox"
                     onClick={() => setOpen(open => !open)}
                 />
                 : <input
-                    value={null}
+                    value={showSelectedDate(inputCheck)}
                     placeholder={inputCheck}
                     readOnly
                     className="inputBox"
@@ -68,11 +76,10 @@ const DatePicker = ({ setCheck, inputCheck, min }) => {
             <div ref={inputRef}>
                 {open &&
                     <Calendar
-                        onChange={item => setDate(item)}
+                        onChange={item => setSelectedDate(format(item, "dd/MM/yyyy"))}
                         locale={locales[locale]}
-                        minDate={min}
+
                         disabledDates={rez}
-                        date={date}
                         color={"#9aa7bc"}
                         className={"calendarElement"}
                     />
