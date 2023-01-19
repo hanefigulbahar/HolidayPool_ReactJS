@@ -3,13 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const villaDataSlice=createSlice({
     name: 'villaData',
     initialState:{
-        villaList:[]
+        villaList:[],
+        villaDataByID:[]
     },
     reducers:{
         setVillaData:(state,action) =>{
             state.villaList=action.payload
         },
+        setVillaDataByID:(state,action)=>{
+            state.villaDataByID=action.payload
+        }
     }
 })
 export default villaDataSlice.reducer
-export const {setVillaData,}=villaDataSlice.actions
+export const {setVillaData,setVillaDataByID}=villaDataSlice.actions

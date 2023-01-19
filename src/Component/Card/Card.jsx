@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
-import '../Card/card.css'
+//Components
+//Pages
+//Routers
+import { NavLink } from 'react-router-dom'
+//Reduxs
+//Icons
+import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
 import { BiBed, BiBath, BiMapPin, BiStar } from 'react-icons/bi'
 import { BsPeople } from 'react-icons/bs'
-import { NavLink } from 'react-router-dom'
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md'
+//Styles
+import '../Card/card.css'
 
 const Card = ({ id, banner, villaName, villaLocation, villaCost, villaDescription }) => {
     const [index, setIndex] = useState(1)

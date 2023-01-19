@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+//Components
+//Pages
+//Routers
+//Reduxs
 import { selectLocation } from '../../Feature/selectLocationSlice';
+import { useDispatch, useSelector } from 'react-redux';
+//Icons
+//Styles
 import '../SelectBox/selectbox.css'
 
 const SelectBox = ({ placeholder }) => {

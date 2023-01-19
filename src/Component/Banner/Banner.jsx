@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { BsCalendarCheck, BsCalendarX } from "react-icons/bs";
-import { MdKeyboardArrowDown } from 'react-icons/md'
+//Components
 import DatePicker from '../DatePicker/DatePicker';
 import SelectBox from '../SelectBox/SelectBox';
 import { VillaService } from '../../Services';
+//Pages
+//Routers
+import { useNavigate } from 'react-router-dom';
+//Reduxs
+import { useDispatch, useSelector } from 'react-redux';
 import { setLocationData } from '../../Feature/locationSlice';
+//Icons
+import { BsCalendarCheck, BsCalendarX } from "react-icons/bs";
+import { MdKeyboardArrowDown } from 'react-icons/md'
+//Styles
 import '../Banner/banner.css'
-
 
 
 

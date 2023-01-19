@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-import logo from "../../../src/logos.png"
-import '../Footer/footer.css'
-import { SlSocialInstagram, SlSocialFacebook, SlSocialTwitter } from 'react-icons/sl'
+//Components
+//Pages
+//Routers
 import { Link } from 'react-router-dom'
+//Reduxs
+//Icons
+import { SlSocialInstagram, SlSocialFacebook, SlSocialTwitter } from 'react-icons/sl'
+//Styles
+import '../Footer/footer.css'
 
 const Footer = () => {
     const date = new Date()

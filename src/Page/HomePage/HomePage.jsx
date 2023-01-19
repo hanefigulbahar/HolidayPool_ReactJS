@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
+//Components
 import Banner from '../../Component/Banner/Banner'
 import Card from '../../Component/Card/Card'
 import Service from '../../Component/Service/Service'
-import '../../Page/HomePage/homepage.css'
 import banner from "../../banne.json"
 import { VillaService } from "../../Services"
-import { setVillaData } from '../../Feature/villaDataSlice'
+//Pages
+//Routers
+//Reduxs
 import { useDispatch, useSelector } from 'react-redux'
+import { setVillaData } from '../../Feature/villaDataSlice'
+//Icons
+//Styles
+import '../../Page/HomePage/homepage.css'
 
 
 const HomePage = () => {

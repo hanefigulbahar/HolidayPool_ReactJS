@@ -1,13 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
+//Components
 import { Calendar } from 'react-date-range';
 import * as locales from 'react-date-range/dist/locale';
 import format from 'date-fns/format';
+//Pages
+//Routers
+//Reduxs
+import { useDispatch, useSelector } from 'react-redux';
+import { setCheckInData, setCheckOutData } from '../../Feature/datePickerSlice';
+//Icons
+//Styles
 import '../DatePicker/datepicker.css'
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCheckInData, setCheckOutData } from '../../Feature/datePickerSlice';
-
 
 const DatePicker = ({ inputCheck }) => {
     const dispatch = useDispatch()

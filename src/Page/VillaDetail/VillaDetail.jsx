@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import './villaDetail.css'
+//Components
+import DatePickerRange from '../../Component/DatePickerRange/DatePickerRange'
+import { VillaService } from "../../Services"
+import banner from "../../banne.json"
+//Routers
+import { useParams, useNavigate } from 'react-router-dom'
+//Reduxs
+import { useDispatch, useSelector } from 'react-redux'
+import { setVillaDataByID } from '../../Feature/villaDataSlice'
+// Icons
 import { BiBed, BiBath, BiCheck, BiXCircle, BiPlusCircle, BiX } from "react-icons/bi"
 import { BsPeople, BsCalendarCheck } from 'react-icons/bs'
-import banner from "../../banne.json"
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md"
-import DatePickerRange from '../../Component/DatePickerRange/DatePickerRange'
-import { useParams, useNavigate } from 'react-router-dom'
-import { VillaService } from "../../Services"
+//Styles
+import './villaDetail.css'
 
 const VillaDetail = () => {
+    const dispatch = useDispatch()
+    const villaData = useSelector(state => state.villaDataSlice.villaDataByID)
     const { villaID } = useParams()
-    const [villaData, setVillaData] = useState()
     const [index, setIndex] = useState(1)
-    const [count, setCount] = useState(0)
+    const [guest, setGuest] = useState(0)
 
     const [rangeDate, setRangeDate] = useState({
         start: new Date(),
@@ -22,8 +30,7 @@ const VillaDetail = () => {
     const rezHandle = () => {
         navigate(`/reservation`, {
             state: {
-                villaID: villaID,
-                guest: count,
+                guest,
                 start: rangeDate.start,
                 end: rangeDate.end,
             }
@@ -32,12 +39,13 @@ const VillaDetail = () => {
 
     useEffect(() => {
         VillaService.getVillaById(villaID)
-            .then(res => (setVillaData(res)))
+            .then(res => (dispatch(setVillaDataByID(res))))
             .catch(err => console.error(err))
-    }, [villaID])
+    }, [])
+
     return (
         <>
-            <div key={villaData?.id}>
+            <div key={villaID}>
                 <div className='villa'>
                     <img className='villa-image' src="https://wallpaperaccess.com/full/1899390.jpg" alt="" />
                     <div className='villa-content'>
@@ -45,7 +53,7 @@ const VillaDetail = () => {
                             <div className='villa-name'>{villaData?.name}</div>
                             <div className='villa-description'>Villa Explanation</div>
                         </div>
-                        {villaData?.description.map((item) => (
+                        {villaData?.description?.map((item) => (
                             <div className='villa-detail'>
                                 <div className='villa-desc-detail'>
                                     <div className='villa-icon'><BiBed /></div>
@@ -90,30 +98,30 @@ const VillaDetail = () => {
                         </div>
                         <div className='villa-reservation-input-group'>
                             <div className='villa-reservation-guest'>
-                                {count === 0
+                                {guest === 0
                                     ? <button disabled className='villa-reservarion-negative'><BiXCircle /></button>
-                                    : <button onClick={() => { setCount(count - 1) }} className='villa-reservarion-negative'><BiXCircle className='guest-icon' /></button>
+                                    : <button onClick={() => { setGuest(guest - 1) }} className='villa-reservarion-negative'><BiXCircle className='guest-icon' /></button>
                                 }
-                                {count === 0
+                                {guest === 0
                                     ? <input readOnly type="text" placeholder='Guest' />
-                                    : <input readOnly type="text" value={count} />}
+                                    : <input readOnly type="text" value={guest} />}
 
-                                <button onClick={() => { setCount(count + 1) }} className='villa-reservarion-plus'><BiPlusCircle className='guest-icon' /></button>
+                                <button onClick={() => { setGuest(guest + 1) }} className='villa-reservarion-plus'><BiPlusCircle className='guest-icon' /></button>
 
                             </div>
                         </div>
                         <div className='villa-reservation-payment'>
                             <div className='villa-reservation-payment-first'>
                                 <div>Advance payment</div>
-                                <div>{villaData?.payments.firstPay} ₺</div>
+                                <div>{villaData?.payments?.firstPay} ₺</div>
                             </div>
                             <div className='villa-reservation-payment-cost'>
                                 <div>Villa fee</div>
-                                <div>{villaData?.payments.payment} ₺</div>
+                                <div>{villaData?.payments?.payment} ₺</div>
                             </div>
                             <div className='villa-reservation-payment-total'>
                                 <div>Total</div>
-                                <div>{Number(villaData?.payments.payment) + Number(villaData?.payments.firstPay)} ₺</div>
+                                <div>{villaData?.payments?.payment + villaData?.payments?.firstPay} ₺</div>
                             </div>
                         </div>
                         <div className='villa-reservation-payment-submit' >
@@ -123,7 +131,7 @@ const VillaDetail = () => {
                 </div>
                 <div className='villa-container-content-detail'>
                     <ul className='villa-container-content-feature'>
-                        {villaData?.features.map((feature, index) => (
+                        {villaData?.features?.map((feature, index) => (
                             feature.status === true
                                 ? <li key={index} className='villa-container-content-feature-detail'><BiCheck className='villa-container-content-feature-icon' /><p>{feature.name}</p></li>
                                 : <li key={index} className='villa-container-content-feature-detail negative'><BiX className='villa-container-content-feature-icon icon-negative ' /><p>{feature.name}</p></li>
@@ -144,7 +152,6 @@ const VillaDetail = () => {
                     </div>
                 </div>
             </div>
-
         </>
 
     )

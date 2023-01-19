@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react'
+//Components
 import Card from '../../Component/Card/Card';
 import banner from "../../banne.json"
-import format from 'date-fns/format';
 import { VillaService } from "../../Services"
-import "../Villas/villas.css"
+//Pages
+//Routers
+//Reduxs
 import { useDispatch, useSelector } from 'react-redux';
 import { setVillaData } from '../../Feature/villaDataSlice';
+//Icons
+//Styles
+import "../Villas/villas.css"
 
 const Villas = () => {
     const dispatch = useDispatch()
@@ -18,7 +22,7 @@ const Villas = () => {
         if (villaLocation !== "") {
             VillaService.getVillaByLocation(villaLocation)
                 .then(
-                    res => console.log(dispatch(setVillaData(res))),
+                    res => dispatch(setVillaData(res)),
                     err => console.log(err)
                 )
             console.log("giriyor")

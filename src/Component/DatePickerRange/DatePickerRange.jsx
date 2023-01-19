@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+//Components
 import { DateRange } from 'react-date-range';
 import * as locales from 'react-date-range/dist/locale';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
+//Pages
+//Routers
+//Reduxs
+//Icons
+//Styles
 import "../DatePickerRange/datePickerRange.css"
-
-
-
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 const DatePickerRange = ({ setRangeDate }) => {
     const nameMapper = {
