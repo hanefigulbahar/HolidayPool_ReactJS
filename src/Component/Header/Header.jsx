@@ -1,6 +1,12 @@
 import React from 'react'
-import '.././Header/header.css'
+//Components
+//Pages
+//Routers
+//Reduxs
+//Icons
 import logo from "../../../src/logos.png"
+//Styles
+import '.././Header/header.css'
 
 const Header = () => {
     return (

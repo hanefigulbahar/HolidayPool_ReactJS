@@ -1,40 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react'
+//Components
 import Card from '../../Component/Card/Card';
 import banner from "../../banne.json"
-import format from 'date-fns/format';
 import { VillaService } from "../../Services"
+//Pages
+//Routers
+//Reduxs
+import { useDispatch, useSelector } from 'react-redux';
+import { setVillaData } from '../../Feature/villaDataSlice';
+//Icons
+//Styles
 import "../Villas/villas.css"
 
 const Villas = () => {
-    const location = useLocation();
-    const [data, setData] = useState([])
-    const villaFilterValues = location.state
-    console.log(villaFilterValues)
+    const dispatch = useDispatch()
+    const villaData = useSelector(state => state.villaDataSlice.villaList)
+    const villaLocation = useSelector(state => state.selectLocationSlice.value)
+    const villaCheckIn = useSelector(state => state.datePickerSlice.checkIn)
+    const villaCheckOut = useSelector(state => state.datePickerSlice.checkOut)
     useEffect(() => {
-        if (villaFilterValues.location === null) {
-            VillaService.getAllVillas()
+        if (villaLocation !== "") {
+            VillaService.getVillaByLocation(villaLocation)
                 .then(
-                    res => setData(res),
+                    res => dispatch(setVillaData(res)),
                     err => console.log(err)
                 )
-        } else {
-            VillaService.getVillaByLocation(villaFilterValues.location)
-                .then(
-                    res => setData(res),
-                    err => console.log(err)
-                )
+            console.log("giriyor")
         }
-
-    }, [villaFilterValues.location])
+    }, [dispatch, villaLocation])
 
     function filterDataWithDate(products) {
         let filteredData = products
-        if (villaFilterValues.checkin !== null) {
-            filteredData = products.filter(product => product.days.includes(format(villaFilterValues.checkin, "dd/MM/yyyy")))
+        if (villaCheckIn !== null) {
+            filteredData = products.filter(product => product.days.includes((villaCheckIn)))
         }
-        if (villaFilterValues.checkout !== null) {
-            filteredData = filteredData.filter(product => product.days.includes(format(villaFilterValues.checkout, "dd/MM/yyyy")))
+        if (villaCheckOut !== null) {
+            filteredData = filteredData.filter(product => product.days.includes(villaCheckOut))
         }
         return filteredData
     }
@@ -47,9 +48,9 @@ const Villas = () => {
             </div>
             <div className="villas-content">
                 <div className="villas-content-detail">
-                    {filterDataWithDate(data).length === 0
+                    {filterDataWithDate(villaData).length === 0
                         ? <div>hello</div>
-                        : filterDataWithDate(data)?.map(product =>
+                        : filterDataWithDate(villaData)?.map(product =>
                             < Card banner={banner} key={product.id} id={product.id} villaPhoto={product.image} villaName={product.name} villaLocation={product.location} villaStatus={product.status} villaDescription={[product.description]} villaCost={product.costs} />
                         )
                     }
