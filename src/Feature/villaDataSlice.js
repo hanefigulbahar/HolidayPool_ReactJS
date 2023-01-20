@@ -5,10 +5,11 @@ const villaDataSlice=createSlice({
     initialState:{
         villaList:[],
         villaDataByID:[]
+        
     },
     reducers:{
         setVillaData:(state,action) =>{
-            state.villaList=action.payload
+            action.payload.map(value=>state.villaList.push(value))
         },
         setVillaDataByID:(state,action)=>{
             state.villaDataByID=action.payload
