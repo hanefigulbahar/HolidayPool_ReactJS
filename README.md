@@ -21,6 +21,7 @@ The website for villa rental.
 
 - All villas can be listed.
 - Villas can be searched by location, check-in and check-out date.
+- Page can be updated with infinite scroll
 
 ## :camera_flash: Screenshots
 
