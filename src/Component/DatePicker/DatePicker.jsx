@@ -53,9 +53,7 @@ const DatePicker = ({ inputCheck }) => {
         inputCheck === "Check-in" ? dispatch(setCheckInData(date)) : dispatch(setCheckOutData(date));
     }
 
-    function setMinDate(inputCheck) {
-        return inputCheck === "Check-in" ? new Date() : checkInData;
-    }
+
 
     const showSelectedDate = (check) => {
         if (check === "Check-in") return checkInData
@@ -83,7 +81,6 @@ const DatePicker = ({ inputCheck }) => {
                     <Calendar
                         onChange={item => setSelectedDate(format(item, "dd/MM/yyyy"))}
                         locale={locales[locale]}
-
                         disabledDates={rez}
                         color={"#9aa7bc"}
                         className={"calendarElement"}

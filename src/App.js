@@ -19,7 +19,6 @@ function App() {
   
   return (
     <div className="App">
-
       <ScrollToTop/>
       <Routes>
           <Route path="/" element={<Layout/>} >

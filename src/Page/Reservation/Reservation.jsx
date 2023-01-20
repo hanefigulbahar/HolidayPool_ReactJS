@@ -6,18 +6,20 @@ import format from 'date-fns/format';
 //Routers
 import { NavLink, useLocation } from 'react-router-dom'
 //Reduxs
+import { useSelector } from 'react-redux';
 //Icons
 import logo from "../../../src/logos.png"
 import { BiStar } from 'react-icons/bi'
 //Styles
 import "../Reservation/reservation.css"
-import { useSelector } from 'react-redux';
 
 const Reservation = () => {
+    const checkDate = useSelector(state => state.datePickerSlice.rangeDate[0])
+    const villaDataByID = useSelector(state => state.villaDataSlice.villaDataByID)
 
     const location = useLocation();
+
     const days = Math.floor((location.state.end - location.state.start) / (24 * 60 * 60 * 1000));
-    const villaDataByID = useSelector(state => state.villaDataSlice.villaDataByID)
 
     return (
         <>
@@ -33,11 +35,11 @@ const Reservation = () => {
                     <div className='rez-detail-date'>
                         <div className='rez-detail-date-check in'>
                             <div>Check-in</div>
-                            <div>{format(location.state.start, "dd/MM/yyyy")}</div>
+                            <div>{format(checkDate.startDate, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check out'>
                             <div>Check-out</div>
-                            <div>{format(location.state.end, "dd/MM/yyyy")}</div>
+                            <div>{format(checkDate.endDate, "dd/MM/yyyy")}</div>
                         </div>
                         <div className='rez-detail-date-check'>
                             <div>Guest</div>

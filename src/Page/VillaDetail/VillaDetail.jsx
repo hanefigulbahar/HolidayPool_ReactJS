@@ -22,17 +22,12 @@ const VillaDetail = () => {
     const [index, setIndex] = useState(1)
     const [guest, setGuest] = useState(0)
 
-    const [rangeDate, setRangeDate] = useState({
-        start: new Date(),
-        end: new Date()
-    })
+
     const navigate = useNavigate()
     const rezHandle = () => {
         navigate(`/reservation`, {
             state: {
                 guest,
-                start: rangeDate.start,
-                end: rangeDate.end,
             }
         })
     }
@@ -93,7 +88,7 @@ const VillaDetail = () => {
                     <div className='villa-reservation'>
                         <div className='villa-reservation-title'>Reservation {villaData?.name}</div>
                         <div className='villa-reservation-date'>
-                            <DatePickerRange setRangeDate={setRangeDate} />
+                            <DatePickerRange />
                             <span><BsCalendarCheck className="icons" /></span>
                         </div>
                         <div className='villa-reservation-input-group'>
