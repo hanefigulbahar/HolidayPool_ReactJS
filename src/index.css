@@ -14,5 +14,6 @@
     --animation-speed: 300ms;
   }
   html, body {
+    padding: .1px;
     background: rgba(214, 214, 214, 0.2);
   }

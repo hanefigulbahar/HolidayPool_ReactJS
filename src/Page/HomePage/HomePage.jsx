@@ -9,10 +9,11 @@ import { VillaService } from "../../Services"
 //Routers
 //Reduxs
 import { useDispatch, useSelector } from 'react-redux'
-import { setVillaData } from '../../Feature/villaDataSlice'
+import { addVillaData } from '../../Feature/villaDataSlice'
 //Icons
 //Styles
 import '../../Page/HomePage/homepage.css'
+import Error from '../../Component/Error/Error'
 
 const HomePage = () => {
     const [page, setPage] = useState(1)
@@ -25,8 +26,8 @@ const HomePage = () => {
         if (isPage === true) {
             setIsPage(false)
             VillaService.getDataForPage(page)
-                .then(res => dispacth(setVillaData(res)))
-                .catch(dispacth(setVillaData([])))
+                .then(res => dispacth(addVillaData(res)))
+                .catch(dispacth(addVillaData([])))
             setPage(page + 1)
         }
     }
@@ -40,19 +41,13 @@ const HomePage = () => {
     }, [isPage])
 
     return (
-        <>
-            <div>
-                <Banner />
-                <Service />
-                <div ref={ref} className="homepage">
-                    {getVillas.length === 0
-                        ? <div>hata</div>
-                        : getVillas?.map((item, index) => (<Card banner={banner} key={index} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />)
-                        )}
-                </div>
-            </div>
-            <div />
-        </>
+        <div>
+            <Banner />
+            <Service />
+            {getVillas.length === 0
+                ? <Error message={"We can not reach to villa list"} />
+                : <div ref={ref} className="homepage">{getVillas?.map((item, index) => (<Card banner={banner} key={index} id={item.id} villaPhoto={item.image} villaName={item.name} villaLocation={item.location} villaStatus={item.status} villaDescription={[item.description]} villaCost={item.costs} />))}</div>}
+        </div>
     )
 }
 
