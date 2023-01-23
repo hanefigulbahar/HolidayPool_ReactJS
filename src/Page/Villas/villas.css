@@ -21,9 +21,36 @@
 }
 
 .villas-content-detail{
-    height: 80vh;
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 2rem 0;
+    gap: 30px 20px;
+}
+
+
+@media (min-width: 700px){
+    .villas-content-detail{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 1rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .villas-content-detail{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+}
+@media (min-width: 1440px){
+   .villas-content-detail{
+       display: grid; 
+       grid-template-columns: 1fr 1fr 1fr 1fr; 
+   }
 }

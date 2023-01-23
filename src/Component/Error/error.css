@@ -1,0 +1,21 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:1rem;
+    margin: 2rem 0;
+}
+.error-icon,.error-message{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.error-message{
+    font-size: 20px;
+}

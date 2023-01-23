@@ -11,6 +11,7 @@ import { setVillaData } from '../../Feature/villaDataSlice';
 //Icons
 //Styles
 import "../Villas/villas.css"
+import Error from '../../Component/Error/Error';
 
 const Villas = () => {
     const dispatch = useDispatch()
@@ -21,6 +22,13 @@ const Villas = () => {
     useEffect(() => {
         if (villaLocation !== "") {
             VillaService.getVillaByLocation(villaLocation)
+                .then(
+                    res => dispatch(setVillaData(res)),
+                    err => console.log(err)
+                )
+            console.log("giriyor")
+        } else {
+            VillaService.getAllVillas(villaLocation)
                 .then(
                     res => dispatch(setVillaData(res)),
                     err => console.log(err)
@@ -47,14 +55,15 @@ const Villas = () => {
                 <div className="villas-title">For the best holiday</div>
             </div>
             <div className="villas-content">
-                <div className="villas-content-detail">
-                    {filterDataWithDate(villaData).length === 0
-                        ? <div>hello</div>
-                        : filterDataWithDate(villaData)?.map(product =>
-                            < Card banner={banner} key={product.id} id={product.id} villaPhoto={product.image} villaName={product.name} villaLocation={product.location} villaStatus={product.status} villaDescription={[product.description]} villaCost={product.costs} />
-                        )
-                    }
-                </div>
+
+                {filterDataWithDate(villaData).length === 0
+                    ? <Error message={"We can not reach to villa list"} />
+                    : <div className="villas-content-detail">{
+                        filterDataWithDate(villaData)?.map(product => < Card banner={banner} key={product.id} id={product.id} villaPhoto={product.image} villaName={product.name} villaLocation={product.location} villaStatus={product.status} villaDescription={[product.description]} villaCost={product.costs} />
+                        )}
+                    </div>
+                }
+
             </div>
         </div>
     )
