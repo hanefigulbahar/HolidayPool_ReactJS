@@ -16,7 +16,7 @@ import Error from '../../Component/Error/Error';
 const Villas = () => {
     const dispatch = useDispatch()
     const villaData = useSelector(state => state.villaDataSlice.villaList)
-    const villaLocation = useSelector(state => state.selectLocationSlice.value)
+    const villaLocation = useSelector(state => state.selectLocationSlice.location)
     const villaCheckIn = useSelector(state => state.datePickerSlice.checkIn)
     const villaCheckOut = useSelector(state => state.datePickerSlice.checkOut)
     useEffect(() => {

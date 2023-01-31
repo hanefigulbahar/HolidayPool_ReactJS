@@ -11,10 +11,12 @@ import '../SelectBox/selectbox.css'
 
 const SelectBox = ({ placeholder }) => {
     const dispacth = useDispatch()
-    const selectedLocation = useSelector(state => state.selectLocationSlice.value)
+    const selectedLocation = useSelector(state => state.selectLocationSlice.location)
     const locationDatas = useSelector(state => state.locationSlice)
     const [open, setOpen] = useState(false);
     const selectRef = useRef(null)
+    console.log(locationDatas)
+    console.log(selectedLocation)
 
     useEffect(() => {
         document.addEventListener("click", hideOnClickOutside, true)

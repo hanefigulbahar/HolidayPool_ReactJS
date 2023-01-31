@@ -43,7 +43,7 @@ const DatePicker = ({ inputCheck }) => {
     })).filter(item => nameMapper[item.value]);
 
     const hideOnClickOutside = (e) => {
-        if (inputRef.current && inputRef.current.contains(e.target)) {
+        if (inputRef.current && !inputRef.current.contains(e.target)) {
             document.addEventListener("click", hideOnClickOutside, true)
             setOpen(false)
         }

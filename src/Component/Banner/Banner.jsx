@@ -22,7 +22,6 @@ const Banner = () => {
     const selectedLocation = useSelector(state => state.selectLocationSlice)
     const checkInData = useSelector(state => state.datePickerSlice.checkIn)
     const checkOutData = useSelector(state => state.datePickerSlice.checkIn)
-
     const seacrhNav = useNavigate()
     const searchHandle = () => {
         seacrhNav(`villas`, {
@@ -53,7 +52,7 @@ const Banner = () => {
                     <SelectBox placeholder={"Select Location"} />
                     <span><MdKeyboardArrowDown className="icons" /></span>
                 </div>
-                {selectedLocation === null && checkInData === null
+                {selectedLocation.location === "" && checkInData === null
                     ? <button disabled onClick={searchHandle} className='search-button'>Search</button>
                     : <button onClick={searchHandle} className='search-button'>Search</button>
                 }

@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit"
 const selectLocationSlice = createSlice({
     name: 'selectedLocationData',
     initialState:{
-        value:""
+        location:""
     },
     reducers:{
         selectLocation:(state,action) =>{
-            state.value=action.payload
+            state.location=action.payload
         }
     }
     })
